@@ -6,13 +6,12 @@ import {Contact} from "./app/views/Contact";
 
 const Stack = createStackNavigator();
 
-export default class App extends React.Component {
-    render() {
-        return <NavigationContainer>
+export default () =>
+    (
+        <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName={"HomeRT"}>
                 <Stack.Screen name={"HomeRT"} component={Home}/>
                 <Stack.Screen name={"ContactRT"} component={Contact}/>
             </Stack.Navigator>
         </NavigationContainer>
-    }
-}
+    );

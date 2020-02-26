@@ -1,42 +1,23 @@
 import React from "react";
-import {Alert, View, StyleSheet, TouchableOpacity, Text} from "react-native";
+import {View, StyleSheet} from "react-native";
+import {MenuButton} from "../components/MenuButton";
 
-export const Menu = ({navigation}) => {
-    const onPress = () => {
-        Alert.alert("You tapped the button!");
-    };
-    return (
-        <View style={styles.container}>
-            <View style={styles.buttonRow}>
-                <TouchableOpacity style={styles.buttonStyles} onPress={onPress}>
-                    <Text style={styles.buttonText}>LESSONS</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonStyles} onPress={onPress}>
-                    <Text style={styles.buttonText}>REGISTER</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.buttonRow}>
-                <TouchableOpacity style={styles.buttonStyles} onPress={onPress}>
-                    <Text style={styles.buttonText}>BLOG</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.buttonStyles}
-                    onPress={() => navigation.navigate("ContactRT")}
-                >
-                    <Text style={styles.buttonText}>CONTACT</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.buttonRow}>
-                <TouchableOpacity style={styles.buttonStyles} onPress={onPress}>
-                    <Text style={styles.buttonText}>QUIZ</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonStyles} onPress={onPress}>
-                    <Text style={styles.buttonText}>ABOUT</Text>
-                </TouchableOpacity>
-            </View>
+export const Menu = ({navigation}) => (
+    <View style={styles.container}>
+        <View style={styles.buttonRow}>
+            <MenuButton text={"LESSONS"}/>
+            <MenuButton text={"REGISTER"}/>
         </View>
-    );
-};
+        <View style={styles.buttonRow}>
+            <MenuButton text={"BLOG"}/>
+            <MenuButton text={"CONTACT"} callback={() => navigation.navigate("ContactRT")}/>
+        </View>
+        <View style={styles.buttonRow}>
+            <MenuButton text={"QUIZ"}/>
+            <MenuButton text={"ABOUT"}/>
+        </View>
+    </View>
+);
 
 const styles = StyleSheet.create({
     container: {

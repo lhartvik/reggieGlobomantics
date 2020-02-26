@@ -1,10 +1,10 @@
 import React from "react";
 import {StyleSheet, Text, View, Platform, Image} from "react-native";
 
-export const Header = (props) => {
+export const Header = ({message}) => {
     const [isLoggedIn, setIsLoggedIn] = React.useState(false)
     const toggleUser = () => setIsLoggedIn(!isLoggedIn);
-    const display = isLoggedIn ? "Sample User" : props.message;
+    const display = isLoggedIn ? "Sample User" : message;
 
     return (
         <View style={styles.headStyle}>

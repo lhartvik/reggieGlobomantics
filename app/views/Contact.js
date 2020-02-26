@@ -4,13 +4,13 @@ import {Header} from "../sections/Header";
 
 export const Contact = (props) => {
 
-    const [msg, setMsg] = React.useState({text: 'Enter message'});
+    const [msg, setMsg] = React.useState({text: 'Enter message'});// multiInput returns an object, not a string
     const [name, setName] = React.useState('Enter name');
     const [email, setEmail] = React.useState('Enter your Email Address');
 
     const clearFields = () => {
         setName('');
-        setMsg({text: ''});
+        setMsg({text: ''});// multiInput returns an object, not a string
         setEmail('');
     }
 
@@ -25,14 +25,18 @@ export const Contact = (props) => {
             <Text style={styles.heading}>Contact Us</Text>
             <TextInput style={styles.inputs}
                        onChangeText={(text) => setName(text)}
-                       value={name}/>
+                       value={name}
+                       underlineColorAndroid={'gray'}
+            />
             <TextInput style={styles.multiInput}
-                       onChangeText={(text) => setMsg({text})}
-                       value={msg.text}
+                       onChangeText={(some_object) => setMsg({text: some_object})}
+                       value={msg.text} // multiInput returns an object, not a string
                        multiline={true}
+                       underlineColorAndroid={'gray'}
                        numberOfLines={4}/>
             <TextInput style={styles.inputs}
                        onChangeText={(text) => setEmail(text)}
+                       underlineColorAndroid={'gray'}
                        value={email}/>
             <TouchableHighlight onPress={() => sendMessage(name, msg, props.navigation)} underlayColor='#31e981'>
                 <Text style={styles.buttons}>
@@ -51,7 +55,7 @@ export const Contact = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         paddingBottom: '45%'
     },
     heading: {
@@ -66,10 +70,13 @@ const styles = StyleSheet.create({
     multiInput: {
         flex: 2,
         width: '90%',
-        paddingTop: 20
+        paddingTop: 20,
+        paddingLeft: 10
     },
     buttons: {
         marginTop: 15,
-        fontSize: 16
+        fontSize: 16,
+        backgroundColor: 'lightblue',
+        padding: 10
     }
 });

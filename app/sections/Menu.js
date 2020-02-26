@@ -7,6 +7,7 @@ export class Menu extends React.Component {
   };
 
   render() {
+
     return (
       <View style={styles.container}>
         <View style={styles.buttonRow}>
@@ -23,7 +24,7 @@ export class Menu extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonStyles}
-            // onPress={() => this.props.navigate("ContactRT")}
+            onPress={() => this.props.navigate("ContactRT")}
           >
             <Text style={styles.buttonText}>CONTACT</Text>
           </TouchableOpacity>

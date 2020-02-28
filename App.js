@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Contact} from "./app/views/Contact";
 import {Video} from "./app/views/Video";
+import {VideoDetail} from "./app/views/VideoDetail";
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export default () =>
                 <Stack.Screen name={"HomeRT"} component={Home}/>
                 <Stack.Screen name={"ContactRT"} component={Contact}/>
                 <Stack.Screen name={"LessonsRT"} component={Video}/>
+                <Stack.Screen name={"VideoDetailRT"} component={VideoDetail}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

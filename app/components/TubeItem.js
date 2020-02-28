@@ -1,8 +1,8 @@
 import React from 'react';
 import {Image, Text, View, TouchableWithoutFeedback} from "react-native";
 
-export const TubeItem = ({id, title, imageSrc}) => {
-    const onPress = () => console.log(id);
+export const TubeItem = ({id, navigation, title, imageSrc}) => {
+    const onPress = () => navigation.navigate('VideoDetailRT', {ytubeId: id})
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={{paddingTop: 20, alignItems: 'center'}}>

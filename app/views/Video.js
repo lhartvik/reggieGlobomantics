@@ -3,7 +3,7 @@ import {View, FlatList, StyleSheet, Text, TextInput, TouchableHighlight, Alert} 
 import {TubeItem} from "../components/TubeItem";
 import youtubekey from './youtubekey';
 
-export const Video = () => {
+export const Video = ({navigation}) => {
     const [listLoaded, setListLoaded] = React.useState(false);
     const [infotext, setInfoText] = React.useState("LOADING...");
     const [errortext, setErrorText] = React.useState('');
@@ -59,6 +59,7 @@ export const Video = () => {
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({item}) =>
                         <TubeItem
+                            navigation={navigation}
                             id={item.id.videoId}
                             title={item.snippet.title}
                             imageSrc={item.snippet.thumbnails.high.url}/>

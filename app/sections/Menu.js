@@ -5,7 +5,7 @@ import {MenuButton} from "../components/MenuButton";
 export const Menu = ({navigation}) => (
     <View style={styles.container}>
         <View style={styles.buttonRow}>
-            <MenuButton text={"LESSONS"}/>
+            <MenuButton text={"LESSONS"} callback={() => navigation.navigate("LessonsRT")}/>
             <MenuButton text={"REGISTER"}/>
         </View>
         <View style={styles.buttonRow}>

@@ -4,9 +4,9 @@ import {Header} from "../sections/Header";
 import {Hero} from "../sections/Hero";
 import {Menu} from "../sections/Menu";
 
-export const Home = ({navigation}) => (
+export const Home = ({route, navigation}) => (
     <View style={styles.container}>
-        <Header message="Press to Login"/>
+        <Header rerenderprop={route} navigation={navigation} message="Press to Login"/>
         <Hero/>
         <Menu navigation={navigation}/>
     </View>

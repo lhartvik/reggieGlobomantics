@@ -2,7 +2,7 @@ import React from "react";
 import {View, StyleSheet, Text, TextInput, TouchableHighlight, Alert} from "react-native";
 import {Header} from "../sections/Header";
 
-export const Contact = (props) => {
+export const Contact = ({navigation}) => {
 
     const [msg, setMsg] = React.useState({text: 'Enter message'});// multiInput returns an object, not a string
     const [name, setName] = React.useState('Enter name');
@@ -21,7 +21,7 @@ export const Contact = (props) => {
 
     return (
         <View style={styles.container}>
-            <Header message="Press to Login"/>
+            <Header navigation={navigation} message="Press to Login"/>
             <Text style={styles.heading}>Contact Us</Text>
             <TextInput style={styles.inputs}
                        onChangeText={(text) => setName(text)}
@@ -38,7 +38,7 @@ export const Contact = (props) => {
                        onChangeText={(text) => setEmail(text)}
                        underlineColorAndroid={'gray'}
                        value={email}/>
-            <TouchableHighlight onPress={() => sendMessage(name, msg, props.navigation)} underlayColor='#31e981'>
+            <TouchableHighlight onPress={() => sendMessage(name, msg, navigation)} underlayColor='#31e981'>
                 <Text style={styles.buttons}>
                     Send Message
                 </Text>

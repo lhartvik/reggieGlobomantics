@@ -6,6 +6,7 @@ import {Contact} from "./app/views/Contact";
 import {Video} from "./app/views/Video";
 import {VideoDetail} from "./app/views/VideoDetail";
 import {Register} from "./app/views/Register";
+import {Login} from "./app/views/Login";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default () =>
                 <Stack.Screen name={"LessonsRT"} component={Video}/>
                 <Stack.Screen name={"VideoDetailRT"} component={VideoDetail}/>
                 <Stack.Screen name={"RegisterRT"} component={Register}/>
+                <Stack.Screen name={"LoginRT"} component={Login}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -7,6 +7,8 @@ import {Video} from "./app/views/Video";
 import {VideoDetail} from "./app/views/VideoDetail";
 import {Register} from "./app/views/Register";
 import {Login} from "./app/views/Login";
+import {Finish} from "./app/views/QuizFinish";
+import {Quiz} from "./app/views/Quiz";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +22,8 @@ export default () =>
                 <Stack.Screen name={"VideoDetailRT"} component={VideoDetail}/>
                 <Stack.Screen name={"RegisterRT"} component={Register}/>
                 <Stack.Screen name={"LoginRT"} component={Login}/>
+                <Stack.Screen name={"QuizRT"} component={Quiz}/>
+                <Stack.Screen name={"FinishRT"} component={Finish}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

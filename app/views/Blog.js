@@ -69,7 +69,7 @@ export const BlogItem = (props) => {
     return (
         <HTML
             onLinkPress={blogChoice}
-            style={{height: 200, borderBottomWidth: 2, borderBottomColor: '#000000', borderStyle: 'solid'}}
+            style={{height: 200, borderBottomWidth: 2, borderColor: '#000000'}}
             html={blogItems}/>
     )
 };

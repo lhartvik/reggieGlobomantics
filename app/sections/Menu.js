@@ -9,7 +9,7 @@ export const Menu = ({navigation}) => (
             <MenuButton text={"REGISTER"} callback={() => navigation.navigate("RegisterRT")}/>
         </View>
         <View style={styles.buttonRow}>
-            <MenuButton text={"BLOG"}/>
+            <MenuButton text={"BLOG"} callback={() => navigation.navigate("BlogRT")}/>
             <MenuButton text={"CONTACT"} callback={() => navigation.navigate("ContactRT")}/>
         </View>
         <View style={styles.buttonRow}>

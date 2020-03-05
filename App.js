@@ -9,6 +9,7 @@ import {Register} from "./app/views/Register";
 import {Login} from "./app/views/Login";
 import {Finish} from "./app/views/QuizFinish";
 import {Quiz} from "./app/views/Quiz";
+import {Blog} from "./app/views/Blog";
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default () =>
                 <Stack.Screen name={"LoginRT"} component={Login}/>
                 <Stack.Screen name={"QuizRT"} component={Quiz}/>
                 <Stack.Screen name={"FinishRT"} component={Finish}/>
+                <Stack.Screen name={"BlogRT"} component={Blog}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

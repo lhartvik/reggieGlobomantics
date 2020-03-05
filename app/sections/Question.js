@@ -21,7 +21,7 @@ export const Question = ({correctAnswer, answer1, answer2, answer3, answer4, que
             });
             scoreUpdate(worth);
         }
-    }
+    };
 
     return (
         <View style={styles.container}>

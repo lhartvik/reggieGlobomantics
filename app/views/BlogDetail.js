@@ -1,7 +1,6 @@
-import React, {useEffect} from "react";
-import {Image, Text, ScrollView, TouchableHighlight, View} from "react-native";
+import React from "react";
+import {Image, ScrollView, View} from "react-native";
 import HTML from 'react-native-render-html';
-import WebView from "react-native-webview";
 
 export const BlogDetail = (props) => {
     const [state, setState] = React.useState({
@@ -49,17 +48,16 @@ export const BlogDetail = (props) => {
 
     const postDetails = `
         <div class="blTitle">
-            <h1></h1>
+            <h1>${state.postTitle}</h1>
         </div>
         <div class="blContent">
+            ${state.postContent}
         </div>
+         <a href=${state.postID} class="blBack">
+            <h2>GO BACK</h2>
+        </a>    
     `;
 
-    const goBackHtml = `
-         <div class="blBack">
-            <h2>GO BACK</h2>
-        </div>    
-    `;
 
     return (
         <View style={{paddingTop: 30}}>
@@ -69,11 +67,9 @@ export const BlogDetail = (props) => {
                         style={{width: '100%', height: 200}}
                         source={{uri: state.postImage}}
                     />
-                    <HTML html={state.postTitle}/>
-                    <HTML html={state.postContent}/>
-                    <TouchableHighlight onPress={goBack}>
-                        <Text>GO BACK</Text>
-                    </TouchableHighlight>
+                    <HTML
+                        onLinkPress={goBack}
+                        html={postDetails}/>
                 </ScrollView>
             )}
         </View>

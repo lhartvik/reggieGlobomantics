@@ -23,7 +23,7 @@ export const Blog = (props) => {
     }, []);
 
     const chooseBlog = (blogID) => {
-        console.log((`Blog ID chosen: ${blogID}`))
+        props.navigation.navigate('BlogDetailRT', {blogId: blogID});
     };
 
     return (
